@@ -1,0 +1,48 @@
+html, body {
+  height: 100vh;
+  margin: 0;
+}
+
+body {
+  background-image: url(../assets/papes/just12-x1.jpg);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: monospace, monospace;
+}
+
+main {
+  background: rgba(30, 30, 30, 0.9);
+  border: 3px solid #e3e3e3;
+  text-align: center;
+  min-width: 270px;
+}
+
+a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  transition: color 250ms;
+  font-size: 2em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:nth-child(1):hover {
+  color: #33adff;
+}
+
+a:nth-child(2):hover {
+  color: #ff2525;
+}
+
+a:nth-child(3):hover {
+  color: #e2c02b;
+}
+
+a:nth-child(4):hover {
+  color: #33d041;
+}
