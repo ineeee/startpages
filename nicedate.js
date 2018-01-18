@@ -1,12 +1,21 @@
 /*
- * script to format dates (clocks or calendars)
- * uses strftime() from c / python / perl / php / ruby, without the %
- * taken from http://strftime.org/
+ * NICE DATE.js
+ * provides function "nicedate()" to to format dates (clocks or calendars)
+ *
+ * `nicedate` is called with two arguments, `format` (required) and
+ * optionally a `Date`. formats use strftime() syntax.
+ *
+ * first argument `format` is a string using `strftime`s syntax
+ * (http://strftime.org) without the "%" symbol
+ *
+ * the second argument is a Date object, but if not present, it
+ * defaults to the current date and time
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
  *
  * how to use:
  *   1) include nicedate.js in your html
  *       <script src="nicedate.js"></script>
- *   2) call the function `nicedate`!
+ *   2) call the function `nicedate()`!
  *
  *
  * consider the following timestamp:
@@ -15,7 +24,7 @@
  *            YOU TYPE     |     YOU GET
  *     --------------------+-------------------
  *     nicedate('H:M:S')   |   07:06:05
- *     nicedate('I:M:S')   |   07:06:05
+ *     nicedate('H:M p')   |   07:06 AM
  *     nicedate('A, b d')  |   Mon, Sep 30
  *     nicedate('Y-m-d')   |   2013-09-30
  *     nicedate('d/m/y')   |   30/09/13
@@ -25,8 +34,8 @@
  * function nicedate(String format, Date time)
  *                          ^^^^^^       ^^^^
  *                          |            |
- *                          |     the desired timestamp, if none is
- *                          |     provided the current time is used
+ *                          |       the desired timestamp, if none is
+ *                          |       provided the current time is used
  *    the format string, it accepts most strftime()
  *    parameters, but without the % symbol
  *
@@ -43,6 +52,14 @@
  *
  * also, you can modify DATE_LOCALE to fit your language
  *
+ *
+ * developer note:
+ *   nicedate('a A w d b B m y Y H I p M S f', new Date(2013, 8, 30, 7, 6, 5))
+ * should return:
+ *   'Mon Monday 1 30 Sep September 09 13 2013 07 07 AM 06 05 000000'
+ *
+ * extra note:
+ *   strftime is used by c / python / perl / php / ruby
  *
  */
 
@@ -158,6 +175,9 @@ function nicedate(format, date) {
 			case 'f':
 				var microseconds = date.getMilliseconds() * 1000;
 				result += pad(microseconds, 6);
+				break;
+
+			case '%':
 				break;
 
 			default:
