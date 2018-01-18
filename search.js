@@ -109,6 +109,19 @@ searchForm.addEventListener('submit', function(event) {
 			searchInput.setAttribute('name', 'q');
 			break;
 
+		case 'yt':
+		case 'youtube':
+			searchForm.setAttribute('action', 'https://www.youtube.com/results');
+			searchInput.setAttribute('name', 'q');
+			break;
+
+		case 'wa':
+		case 'wolfram':
+		case 'wolframalpha':
+			searchForm.setAttribute('action', 'https://www.wolframalpha.com/input/');
+			searchInput.setAttribute('name', 'i');
+			break;
+
 		case 'g':
 		case 'google':
 		default:
