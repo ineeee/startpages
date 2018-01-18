@@ -1,0 +1,92 @@
+$dark: #425E4A
+$light: #6E9D7C
+
+body, p, h2, ul
+	margin: 0
+	padding: 0
+
+body
+	background: $dark
+	font-family: monospace
+	font-size: 1.3rem
+
+main
+	max-width: 960px
+	margin: 20vh auto 1rem
+
+section
+	display: flex
+
+header, aside
+	flex: 1
+	background: $light
+	margin: 1rem
+
+header
+	display: flex
+	justify-content: space-between
+	flex-direction: column
+	align-items: center
+
+	h2
+		flex: 1 0 auto
+		font-family: Lobster, cursive
+		color: $dark
+		font-size: 5rem
+
+	p
+		background: $dark
+		display: inline-block
+		padding: 1.4rem 2.4rem
+		font-size: 2rem
+
+	a, a:hover
+		color: $light
+		text-decoration: none
+		transition: opacity 500ms
+
+	a:hover
+		opacity: 0.8
+
+aside ul
+	list-style-type: none
+
+	a
+		color: inherit
+		text-decoration: none
+		padding: 0.8rem
+		display: block
+
+	li
+		background: $dark
+		color: $light
+		margin: 0.8rem
+		transition: 500ms
+
+		span
+			color: $dark
+
+	li:hover
+		background: $light
+		color: $dark
+
+		span
+			color: $dark
+
+form
+	margin: 1rem
+
+input::placeholder
+	color: $dark
+
+input
+	background: $light
+	color: $dark
+	font-family: monospace
+	font-size: 1.6rem
+
+	border: 0
+	box-sizing: border-box
+	outline: 0
+	padding: 1rem
+	width: 100%

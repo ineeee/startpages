@@ -1,0 +1,98 @@
+body, p, h2, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #425E4A;
+  font-family: monospace;
+  font-size: 1.3rem;
+}
+
+main {
+  max-width: 960px;
+  margin: 20vh auto 1rem;
+}
+
+section {
+  display: flex;
+}
+
+header, aside {
+  flex: 1;
+  background: #6E9D7C;
+  margin: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+header h2 {
+  flex: 1 0 auto;
+  font-family: Lobster, cursive;
+  color: #425E4A;
+  font-size: 5rem;
+}
+header p {
+  background: #425E4A;
+  display: inline-block;
+  padding: 1.4rem 2.4rem;
+  font-size: 2rem;
+}
+header a, header a:hover {
+  color: #6E9D7C;
+  text-decoration: none;
+  transition: opacity 500ms;
+}
+header a:hover {
+  opacity: 0.8;
+}
+
+aside ul {
+  list-style-type: none;
+}
+aside ul a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.8rem;
+  display: block;
+}
+aside ul li {
+  background: #425E4A;
+  color: #6E9D7C;
+  margin: 0.8rem;
+  transition: 500ms;
+}
+aside ul li span {
+  color: #425E4A;
+}
+aside ul li:hover {
+  background: #6E9D7C;
+  color: #425E4A;
+}
+aside ul li:hover span {
+  color: #425E4A;
+}
+
+form {
+  margin: 1rem;
+}
+
+input::placeholder {
+  color: #425E4A;
+}
+
+input {
+  background: #6E9D7C;
+  color: #425E4A;
+  font-family: monospace;
+  font-size: 1.6rem;
+  border: 0;
+  box-sizing: border-box;
+  outline: 0;
+  padding: 1rem;
+  width: 100%;
+}
