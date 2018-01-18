@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Welcome to the Internet</h1>
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 368">
+		<path d="M569.35 159.63a48 48 0 0 1 0 48.74C513 304 407.86 368 288 368S63 304.05 6.65 208.37a48 48 0 0 1 0-48.74C63 64 168.14 0 288 0s225 64 281.35 159.63zM288 320a136 136 0 1 0-136-136 135.93 135.93 0 0 0 136 136z"/>
+		<path d="M288 80a104 104 0 1 1-91.77 55.06 42.83 42.83 0 1 0 42.83-42.82A103.45 103.45 0 0 1 288 80z"/>
+	</svg>
+
+	<h2 id="clock"></h2>
+
+	<script src="../nicedate.js"></script>
+	<script>
+		var clock = document.getElementById('clock');
+
+		function update() {
+			clock.innerHTML = nicedate('H:Mp');
+		}
+
+		setInterval(update, 20000); // 20 sec
+		window.onload = update;
+	</script>
+</body>
+</html>

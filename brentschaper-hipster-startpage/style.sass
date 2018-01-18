@@ -1,0 +1,50 @@
+@font-face
+	font-family: Ailerons
+	src: local(Ailerons), url(../assets/fonts/Ailerons-Typeface.otf)
+
+@keyframes fadeInDown
+	from
+		opacity: 0
+		transform: translate3d(0, -50vh, 0)
+
+	to
+		opacity: 1
+		transform: none
+
+@keyframes fadeInUp
+	from
+		opacity: 0
+		transform: translate3d(0, 100vh, 0)
+
+	to
+		opacity: 1
+		transform: none
+
+body
+	background-image: url(../assets/papes/brentschaper-hipster.jpg)
+	background-size: cover
+	background-position: center
+	overflow: hidden
+
+	color: #fff
+	font-family: Ailerons
+	text-align: center
+
+h1, h2
+	font-weight: 100
+	padding: 2rem
+
+h1
+	font-size: 4.4rem
+	animation: 1s fadeInDown
+
+h2
+	font-size: 4rem
+	letter-spacing: 0.8rem
+
+svg, h2
+	animation: 1s fadeInUp
+
+svg
+	fill: #fff
+	width: 4rem
