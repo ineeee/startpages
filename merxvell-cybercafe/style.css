@@ -1,0 +1,91 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 4rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@font-face {
+  font-family: "Pixel";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Pixel"), local("LLPIXEL3"), url("../assets/fonts/LLPIXEL3.ttf");
+}
+@font-face {
+  font-family: "Pixel-LCD";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Pixel-LCD-7"), url("../assets/fonts/Pixel-LCD-7.ttf");
+}
+html, body {
+  height: 100%;
+}
+
+body {
+  background-image: url(../assets/pixels/merxvell-cybercafe.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 9% 0 0 8%;
+  color: #fff;
+  text-align: center;
+}
+
+svg, svg path {
+  fill: #fff;
+  width: 4rem;
+  height: auto;
+}
+
+nav div {
+  display: inline-block;
+  padding: 1rem;
+  opacity: 0.6;
+}
+
+nav div:hover {
+  opacity: 0.8;
+}
+
+section {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+section div {
+  display: none;
+}
+
+section div.selected {
+  display: block;
+  animation: 300ms fadeInUp;
+}
+
+section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+section li {
+  display: inline-block;
+}
+
+section h2 {
+  font-family: "Pixel-LCD", sans-serif;
+  font-size: 2.4rem;
+  color: #d3d3d3;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  border-bottom: 2px solid #d3d3d3;
+}
+
+section a {
+  font-family: "Pixel", monospace;
+  font-size: 1.8rem;
+  color: #d3d3d3;
+  text-decoration: none;
+  margin: 0 1rem;
+}
