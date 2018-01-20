@@ -25,7 +25,7 @@
  *     --------------------+-------------------
  *     nicedate('H:M:S')   |   07:06:05
  *     nicedate('H:M p')   |   07:06 AM
- *     nicedate('A, b d')  |   Mon, Sep 30
+ *     nicedate('a, b d')  |   Mon, Sep 30
  *     nicedate('Y-m-d')   |   2013-09-30
  *     nicedate('d/m/y')   |   30/09/13
  *     nicedate('m/d')     |   09/30
