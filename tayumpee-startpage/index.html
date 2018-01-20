@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>お帰りなさい, ANON</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<main class="second-screen">
+		<section id="date">
+			WEEKDAY 00/00/0000 00:00:00
+		</section>
+
+		<aside>
+			&nbsp;
+		</aside>
+
+		<section id="links">
+			<h2>お帰りなさい</h2>
+
+			<div>
+				<ul>
+					<li><a href="https://boards.4chan.org/wg/">/wg/</a></li>
+					<li><a href="https://boards.4chan.org/f/">/f/</a></li>
+					<li><a href="http://neo-geo.com/forums/">neogeo</a></li>
+					<li><a href="https://shmups.system11.org/">shmups</a></li>
+					<li><a href="https://darkumbra.net/forums/">darkumbra</a></li>
+				</ul>
+
+				<ul>
+					<li><a href="https://www.facebook.com/">facebook</a></li>
+					<li><a href="https://mail.google.com/mail/">gmail</a></li>
+					<li><a href="https://www.tumblr.com/">tumblr</a></li>
+					<li><a href="https://www.youtube.com/">youtube</a></li>
+					<li><a href="https://soundcloud.com/">soundcloud</a></li>
+				</ul>
+
+				<ul>
+					<li><a href="http://store.steampowered.com/">steam</a></li>
+					<li><a href="https://www.gog.com/">gog</a></li>
+					<li><a href="https://www.humblebundle.com/">humblebundle</a></li>
+					<li><a href="http://hce.halomaps.org/">halomaps</a></li>
+				</ul>
+
+				<ul>
+					<li><a href="https://www.amazon.com/">amazon</a></li>
+					<li><a href="https://www.ebay.com/">ebay</a></li>
+					<li><a href="https://www.massdrop.com/">massdrop</a></li>
+					<li><a href="https://www.jlist.com/">j-list</a></li>
+					<li><a href="https://www.redbubble.com/">redbubble</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<section id="video">
+			<h2>&gt;implying i'm going to embed a whole video</h2>
+		</section>
+
+		<footer>
+			<button id="open-first-screen" type="button">&nbsp;</button>
+			<button id="open-second-screen" type="button">&nbsp;</button>
+
+			<form id="search">
+				<input placeholder="search">
+			</form>
+		</footer>
+	</main>
+
+	<script src="../nicedate.js"></script>
+	<script>
+		var date = document.getElementById('date')
+
+		function update() {
+			date.innerHTML = nicedate('A d/m/Y H:M:S')
+		}
+
+		setInterval(update, 1000)
+		window.onload = update;
+	</script>
+	<script>
+		var container = document.querySelector('main');
+
+		var openFirstScreen = document.getElementById('open-first-screen'),
+			openSecondScreen = document.getElementById('open-second-screen');
+
+		openFirstScreen.addEventListener('click', function(event) {
+			container.className = 'first-screen';
+		});
+
+		openSecondScreen.addEventListener('click', function(event) {
+			container.className = 'second-screen';
+		});
+	</script>
+</body>
+</html>

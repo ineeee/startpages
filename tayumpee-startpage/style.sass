@@ -1,0 +1,152 @@
+$gap: 7px
+$grid-max-width: 5
+$grid-max-height: 16
+
+$button-size: 12px
+
+@font-face
+	font-family: 'haxrcorp'
+	src: url('../assets/fonts/haxrcorpttf.ttf')
+
+html, body
+	height: 90vh
+	margin: 0
+
+body
+	background: #000
+	color: #fff
+	// its a 5x5 black background with a 3x3 gray square
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAMAAAC6sdbXAAAABlBMVEUMDAwRERF5DuGoAAAAEklEQVQI12NgYGRkAEEEQhIBAADZAA2xXf1ZAAAAAElFTkSuQmCC)
+
+	font-family: haxrcorp, monospace
+
+	display: flex
+	justify-content: center
+	align-items: center
+
+a, input
+	font-family: inherit
+	color: inherit
+
+main
+	margin: 0 auto
+	height: 319px
+	width: 672px
+
+	display: grid
+	grid-template-columns: repeat(#{$grid-max-width}, 1fr)
+	grid-gap: $gap
+	grid-auto-rows: minmax($button-size, auto)
+
+// page's grid
+
+#date
+	grid-column: 1 / #{$grid-max-width}
+	grid-row: 1
+
+	text-transform: uppercase
+
+aside
+	grid-column: #{$grid-max-width}
+	grid-row: 2 / #{$grid-max-height + 1}
+
+#links, #video
+	grid-column: 1 / #{$grid-max-width}
+	grid-row: 2 / #{$grid-max-height}
+
+footer
+	grid-column: 1 / #{$grid-max-width}
+	grid-row: $grid-max-height
+
+// end grid
+
+#links
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	align-items: center
+
+	h2
+		text-align: center
+		font-weight: 100
+
+	div
+		ul
+			display: inline-block
+			list-style: none
+			padding: 0
+			margin: 0 1em 2em
+
+	a
+		display: block
+		color: inherit
+		text-decoration: none
+		line-height: 1em
+		min-width: 4em
+
+	a:hover
+		text-decoration: underline
+		background: rgba(0, 0, 0, 0.1)
+
+
+aside
+	background: #fff center center no-repeat
+	background-size: cover
+
+#links, #video
+	background: #fff
+	color: #000
+
+footer
+	display: flex
+	flex-direction: row
+	align-items: flex-end
+
+	// select the following element for child thats in the parent
+	& > * ~ *
+		margin-left: $gap
+
+	button
+		border: 0
+		outline: 0
+		width: $button-size
+		height: $button-size
+		background: #fff
+
+	button:hover
+		background: darken(#fff, 60%)
+
+	form
+		display: inline-block
+		flex: 1 1 auto
+
+	input
+		border: 0
+		box-sizing: border-box
+
+		padding: 0 4px
+		width: 100%
+		height: $button-size
+
+		color: #000
+		font-size: 1em
+
+.first-screen
+	aside
+		background-image: url(../assets/weeb/m1.min.gif)
+
+	footer button:first-child
+		background: darken(#fff, 45%)
+
+	#video
+		display: none
+
+.second-screen
+	aside
+		background-image: url(../assets/weeb/m2.min.gif)
+
+	footer button:nth-child(2)
+		background: darken(#fff, 45%)
+
+	#links
+		display: none
