@@ -1,0 +1,66 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #5F5F5F;
+  margin: 4rem;
+}
+
+a {
+  transition: background-color 100ms linear;
+}
+
+a:hover {
+  background-color: #E4D6A8;
+}
+
+body > nav {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+body > nav h2 {
+  margin: 0;
+  flex: 1 1 auto;
+  display: inline;
+}
+body > nav a {
+  margin: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main div {
+  padding: 1rem 2rem;
+}
+
+section a {
+  color: inherit;
+  font-size: 1.15rem;
+  text-decoration: none;
+  display: inline-block;
+  padding: 0 0.22rem 0.1rem;
+}
+
+#links a:first-of-type {
+  margin-left: 2rem;
+}
+
+.tab-hidden {
+  display: none;
+}
+
+#news p:first-of-type {
+  margin-left: 2rem;
+}
+#news > nav {
+  text-align: center;
+}
+#news a {
+  margin: 0.2rem;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+</head>
+<body>
+	<nav>
+		<h2>Weekday, Month 00</h2>
+
+		<a data-target="internet">internet</a>
+		<a data-target="fakenews">fakenews</a>
+		<a data-target="todo">todo</a>
+	</nav>
+
+	<main>
+		<div id="links" data-name="internet">
+			<section>
+				<h3>Banking</h3>
+				<a href="https://www.gsbank.com/">Goldman</a>
+				<a href="https://onlinebanking.tdbank.com/">TD</a>
+			</section>
+
+			<section>
+				<h3>Boston College</h3>
+				<a href="https://portal.bc.edu/">Agora</a>
+				<a href="https://calendar.google.com/">Calendar</a>
+				<a href="https://events.bc.edu/">Events</a>
+				<a href="http://g.bc.edu/">Gmail</a>
+			</section>
+
+			<section>
+				<h3>Media</h3>
+				<a href="https://www.facebook.com/">Facebook</a>
+				<a href="https://u.teknik.io/">Teknik</a>
+				<a href="https://en.wikipedia.org/">Wikipedia</a>
+				<a href="https://www.youtube.com/">YouTube</a>
+			</section>
+
+			<section>
+				<h3>Shopping</h3>
+				<a href="https://www.amazon.com/">Amazon</a>
+				<a href="https://craigslist.org/">Craigslist</a>
+				<a href="https://www.grailed.com/">Grailed</a>
+			</section>
+
+			<section>
+				<h3>4chan</h3>
+				<a href="https://boards.4chan.org/ck/">/ck/</a>
+				<a href="https://boards.4chan.org/fa/">/fa/</a>
+				<a href="https://boards.4chan.org/g/">/g/</a>
+				<a href="https://boards.4chan.org/tv/">/tv/</a>
+				<a href="https://boards.4chan.org/wg/">/wg/</a>
+				<a href="https://boards.4chan.org/trash/">/trash/</a>
+			</section>
+		</div>
+
+		<div id="news" data-name="fakenews">
+			<nav>
+				<a data-news-source="bbc-news">BBC</a>
+				<a data-news-source="bloomberg">Bloomberg</a>
+				<a data-news-source="recode">Recode</a>
+				<a data-news-source="reuters">Reuters</a>
+			</nav>
+
+			<div id="render"></div>
+		</div>
+
+		<div id="todo" data-name="todo">
+			<p>Acbn's Todo:</p>
+			<p>Add more functionality</p>
+			<p>Get more Coors</p>
+		</div>
+	</main>
+
+	<script src="../nicedate.js"></script>
+	<script>
+		// date
+		window.onload = function() {
+			document.querySelector('nav h2').innerHTML = nicedate('A, B d')
+		}
+	</script>
+
+	<script>
+		// this code makes tabs work, any element with [data-target="something"]
+		// will make another element with [data-name="something"] show
+
+		var container = document.body;
+
+		var controllers = document.querySelectorAll('[data-target]'),
+			tabs = document.querySelectorAll('[data-name]');
+
+		for (let i = 0; i < controllers.length; i++) {
+			var controller = controllers[i];
+
+			controller.addEventListener('click', update(i));
+		}
+
+		function update(index) {
+			return function(event) {
+				var controller = controllers[index];
+
+				for (let i = 0; i < tabs.length; i++) {
+					var tab = tabs[i],
+						target = controller.dataset.target,
+						tabName = tab.dataset.name;
+
+					if (target === tabName) {
+						tab.classList.add('tab-shown')
+						tab.classList.remove('tab-hidden')
+					} else {
+						tab.classList.add('tab-hidden')
+						tab.classList.remove('tab-shown')
+					}
+				}
+			}
+		}
+
+		// show the first tab by default
+		update(0)();
+	</script>
+
+	<script>
+		// load news sources
+		async function getNews(source) {
+			let response = await fetch('https://newsapi.org/v1/articles?source=' + source + '&sortBy=top&apiKey=ca4d170f02ed4a109aff6a3b994591ae')
+			return await response.json()
+		}
+
+		function renderNews(source) {
+			return async function(event) {
+				var json = await getNews(source);
+				console.log(json);
+
+				if (json.status !== 'ok') {
+					container.innerHTML = `
+						<h3>There was an error getting the news.</h3>
+						<p>${json.message}</p>
+					`;
+					return;
+				}
+
+				var fragment = document.createDocumentFragment();
+
+				for (let i = 0; i < json.articles.length; i++) {
+					let article = json.articles[i],
+						section = document.createElement('section');
+
+					section.innerHTML = `
+						<h3><a href="${article.url}">${article.title}</a></h3>
+						<p>${article.description}</p>
+					`;
+
+					fragment.appendChild(section);
+				}
+
+				while (container.firstChild)
+					container.removeChild(container.firstChild);
+
+				container.appendChild(fragment);
+			}
+		}
+
+		var container = document.getElementById('render'),
+			sources = document.querySelectorAll('#news [data-news-source]');
+
+		for (let i = 0; i < sources.length; i++) {
+			var button = sources[i],
+				source = button.dataset.newsSource;
+
+			button.addEventListener('click', renderNews(source))
+		}
+
+		// lets load reuters by default, just like in the original startpage
+		renderNews('reuters')();
+	</script>
+</body>
+</html>
