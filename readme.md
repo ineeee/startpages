@@ -12,6 +12,11 @@ also i only care about the newest desktop firefox/chrome, and internationalizati
 ### [categories anon](https://inexist3nce.github.io/startpages/categories-anon/)
 ![](https://inexist3nce.github.io/startpages/assets/screenshots/categories-anon.png)
 
+### [ewasion jundo](https://inexist3nce.github.io/startpages/ewasion-jundo/)
+why did i copy this one its made with the angelfile drag and drop editor and it has almost no features ;~; didnt even get to use cool things
+![](https://inexist3nce.github.io/startpages/assets/screenshots/ewasion-jundo.png)
+
+
 ### [just12 x1](https://inexist3nce.github.io/startpages/just12-x1/)
 ![](https://inexist3nce.github.io/startpages/assets/screenshots/just12-x1.jpg)
 
