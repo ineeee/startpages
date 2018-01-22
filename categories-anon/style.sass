@@ -1,0 +1,56 @@
+input, a
+	color: inherit
+	font-size: 100%
+
+body
+	background: #eceff1
+	color: #333
+	text-align: center
+
+	font-family: 'Malgun Gothic', sans-serif
+	font-size: 1.05rem
+
+header
+	padding: 4rem 1rem 1rem
+
+header input
+	width: 500px
+	border: 0
+	border-radius: 2px
+	outline: 0
+	font-size: 1rem
+	padding: 0.4rem 1rem
+
+main
+	max-width: 1200px
+	margin: 0 auto
+
+main div
+	display: inline-block
+	width: 200px
+	height: 140px
+	margin: 2rem 1.8rem
+	padding-left: 4rem
+	border-left: 3px solid #607d8b
+
+	background-repeat: no-repeat
+
+main ul
+	list-style: none
+	text-align: left
+	padding: 0
+	margin: 0.6rem 0
+
+main a
+	text-decoration: none
+
+main a:hover
+	text-decoration: underline
+
+$backgrounds: 'planet.png', 'flowers.png', 'logs.png', 'blossom.png', 'malachite.png', 'sway.png', 'desperation.png', 'flowerprint.png'
+
+@each $file in $backgrounds
+	$index: index($backgrounds, $file)
+
+	main div:nth-child(#{$index})
+		background-image: url('../assets/banners/#{$file}')
