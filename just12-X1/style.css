@@ -1,3 +1,7 @@
+@font-face {
+  font-family: bnt;
+  src: local("Big Noodle Titling"), url(../assets/fonts/big_noodle_titling.ttf);
+}
 html, body {
   height: 100vh;
   margin: 0;
@@ -9,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: monospace, monospace;
+  font-family: bnt, monospace;
 }
 
 main {
