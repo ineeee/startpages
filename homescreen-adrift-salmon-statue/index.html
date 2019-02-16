@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>what an ugly folder name</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header id="squiggles">
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+		<div class="squiggly"><i></i><i></i><i></i><i></i></div>
+	</header>
+
+	<section>
+		<p id="clock">00:00 -</p>
+		<p id="date">Weekday; Month 0th, 0000</p>
+
+		<p>
+			<a href>Link</a>
+			<a href>Link</a>
+			<a href>Link</a>
+			<a href>Link</a>
+		</p>
+	</section>
+
+
+	<script src="../nicedate.js"></script>
+	<script>
+		var clock = document.getElementById('clock'),
+			date = document.getElementById('date');
+
+		function update() {
+			clock.innerHTML = nicedate('H:M -')
+			date.innerHTML = nicedate('A; B d, Y')
+		}
+
+		setInterval(update, 30000);
+		window.onload = update;
+	</script>
+</body>
+</html>

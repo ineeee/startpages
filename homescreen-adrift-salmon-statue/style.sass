@@ -1,0 +1,89 @@
+$background: #ffa990
+$color: #fff
+
+$circle: 120px
+$pi: 3.14159265358979323
+$border-width: 2px
+$border-color: #ee353d
+
+html, body
+	margin: 0
+	height: 100vh
+
+body
+	display: flex
+	align-items: center
+	flex-direction: column
+	justify-content: center
+
+	background: $background
+	color: $color
+	font-family: Georgia, Cambria, serif // should be Nara
+
+// body::before
+// 	$image-size: 16rem
+// 	content: ""
+// 	position: fixed
+// 	top: calc(50vh - #{$image-size / 2})
+// 	right: -1 * $image-size / 2
+// 	height: $image-size
+// 	width: $image-size
+
+// 	background-size: 100%
+// 	background-image: url(../assets/papes/Protomartyr_LP2.jpg)
+// 	filter: grayscale(50%)
+// 	opacity: .5
+
+#clock
+	// text-shadow: 6px 6px transparentize(#ddd, 0.5)
+	font-size: 4rem
+	margin: 0
+
+section
+	padding: 1rem 0
+	width: $circle / $pi * (4 * 2 + 1)
+
+	a
+		color: inherit
+		text-decoration: none
+		margin-right: 0.8rem
+
+	a:hover
+		text-decoration: underline
+
+@function kinda-sqrt($r)
+	$x0: 1
+	$x1: $x0
+
+	@for $i from 1 through 8
+		$x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0)
+		$x0: $x1
+
+	@return $x1
+
+.squiggly
+	height: $circle
+	padding-left: 1 / ($pi / $circle)
+
+	i
+		border-radius: 100%
+		border: $border-width solid transparent
+		box-sizing: border-box
+
+		display: inline-block
+		width: $circle
+		height: $circle
+
+		margin-left: $circle / $pi * -1
+
+	i:nth-child(even)
+		border-bottom-color: $border-color
+		margin-bottom: $circle / kinda-sqrt(2)
+
+	i:nth-child(odd)
+		border-top-color: $border-color
+		margin-top: $circle / kinda-sqrt(2)
+
+@for $i from 1 through 8
+	.squiggly:nth-child(#{$i})
+		margin-top: -1 * $circle / kinda-sqrt(2) - $border-width
