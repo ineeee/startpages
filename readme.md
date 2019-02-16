@@ -40,4 +40,4 @@ why did i copy this one its made with the angelfile drag and drop editor and it 
 
 ## inspired from homescreens
 ### [adrift's salmon statue](https://inexist3nce.github.io/startpages/homescreen-adrift-salmon-statue/) ([source](https://i.imgur.com/6KSUAst.jpg) [2](https://i.imgur.com/81cWRGg.jpg))
-![](AAAAAAAA https://inexist3nce.github.io/startpages/assets/screenshots/homescreen-adrift-salmon-statue.png)
+![](https://inexist3nce.github.io/startpages/assets/screenshots/homescreen-adrift-salmon-statue.png)
