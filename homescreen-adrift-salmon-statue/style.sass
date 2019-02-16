@@ -20,22 +20,7 @@ body
 	color: $color
 	font-family: Georgia, Cambria, serif // should be Nara
 
-// body::before
-// 	$image-size: 16rem
-// 	content: ""
-// 	position: fixed
-// 	top: calc(50vh - #{$image-size / 2})
-// 	right: -1 * $image-size / 2
-// 	height: $image-size
-// 	width: $image-size
-
-// 	background-size: 100%
-// 	background-image: url(../assets/papes/Protomartyr_LP2.jpg)
-// 	filter: grayscale(50%)
-// 	opacity: .5
-
 #clock
-	// text-shadow: 6px 6px transparentize(#ddd, 0.5)
 	font-size: 4rem
 	margin: 0
 
@@ -63,7 +48,8 @@ section
 
 .squiggly
 	height: $circle
-	padding-left: 1 / ($pi / $circle)
+	padding-left: $circle / $pi
+	margin-top: -1 * $circle / kinda-sqrt(2) - $border-width
 
 	i
 		border-radius: 100%
@@ -83,7 +69,3 @@ section
 	i:nth-child(odd)
 		border-top-color: $border-color
 		margin-top: $circle / kinda-sqrt(2)
-
-@for $i from 1 through 8
-	.squiggly:nth-child(#{$i})
-		margin-top: -1 * $circle / kinda-sqrt(2) - $border-width
