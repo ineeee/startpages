@@ -1,7 +1,7 @@
 # startpages
 felt like learning html5 and css3's new features, so im copying startpages found in github and /wg/ using stuff like flexbox, css grids, new units and new elements.
 
-also i only care about the newest desktop firefox/chrome, and internationalization/localization, accesibility, social media tags, search engine optimization are out of scope.
+i only care about the newest desktop firefox/chrome. this won't cover internationalization/localization, accesibility, social media tags or search engine optimization.
 
 ### [acbn raccoon](https://inexist3nce.github.io/startpages/acbn-raccoon/)
 ![](https://inexist3nce.github.io/startpages/assets/screenshots/acbn-raccoon.png)
@@ -36,3 +36,8 @@ why did i copy this one its made with the angelfile drag and drop editor and it 
 
 ### [warsawpact's homepage](https://inexist3nce.github.io/startpages/warsawpact-homepage/)
 ![](https://inexist3nce.github.io/startpages/assets/screenshots/warsawpact-homepage.png)
+
+
+## inspired from homescreens
+### [adrift's salmon statue](https://inexist3nce.github.io/startpages/homescreen-adrift-salmon-statue/)
+![](https://inexist3nce.github.io/startpages/assets/screenshots/homescreen-adrift-salmon-statue.png)
